@@ -1,3 +1,6 @@
+# Copyright © 2026 Borderite
+# Licnsed under the MIT License     
+
 AS = nasm
 
 CFLAGS = -g -Wall -Wextra -pedantic -Werror -std=c2x -Wno-gnu-binary-literal

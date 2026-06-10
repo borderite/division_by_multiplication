@@ -1,3 +1,11 @@
+/******************************
+  Unit tests for division.asm
+ ******************************
+
+  Copyright © 2026 Borderite
+  Licnsed under the MIT License     
+
+*/
 #include "vendor/unity.h"
 #include <math.h>
 #include <stdint.h>
