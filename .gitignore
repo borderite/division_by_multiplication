@@ -1,3 +1,67 @@
+# === Build directories (CMake) ===
+build/
+build-*/
+cmake-build-*/
+out/
+
+# === CMake generated files ===
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+*.cmake
+!CMakeLists.txt
+
+# === clangd ===
+.cache/
+.clangd/
+.clang-tidy.cache
+
+# === Compiled object files / binaries ===
 *.o
+*.obj
+*.lo
+*.slo
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.elf
+*.bin
+*.map
+
+# === NASM ===
+*.lst
+*.nasm.o
+
+# === Debug / symbols ===
+*.dSYM/
+*.pdb
+*.ilk
+*.exp
+*.idb
+
+# === Editor / IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
 *~
-tests
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Misc ===
+*.log
+*.tmp

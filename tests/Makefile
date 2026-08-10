@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/ssakata/programming/division_by_multiplication
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -87,7 +97,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\" \"library\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -132,21 +142,21 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles /home/ssakata/programming/division_by_multiplication//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/ssakata/programming/division_by_multiplication && $(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles /home/ssakata/programming/division_by_multiplication/tests//CMakeFiles/progress.marks
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles /home/ssakata/programming/division_by_multiplication//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
+	cd /home/ssakata/programming/division_by_multiplication && $(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles /home/ssakata/programming/division_by_multiplication/tests//CMakeFiles/progress.marks
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/codegen
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -155,31 +165,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ssakata/programming/division_by_multiplication && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named find_magic_number
+# Convenience name for target.
+tests/CMakeFiles/division_tests.dir/rule:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/division_tests.dir/rule
+.PHONY : tests/CMakeFiles/division_tests.dir/rule
 
-# Build rule for target.
-find_magic_number: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 find_magic_number
-.PHONY : find_magic_number
+# Convenience name for target.
+division_tests: tests/CMakeFiles/division_tests.dir/rule
+.PHONY : division_tests
 
 # fast build rule for target.
-find_magic_number/fast:
-	$(MAKE) $(MAKESILENT) -f find_magic_number/CMakeFiles/find_magic_number.dir/build.make find_magic_number/CMakeFiles/find_magic_number.dir/build
-.PHONY : find_magic_number/fast
+division_tests/fast:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/division_tests.dir/build.make tests/CMakeFiles/division_tests.dir/build
+.PHONY : division_tests/fast
+
+division_tests.o: division_tests.c.o
+.PHONY : division_tests.o
+
+# target to build an object file
+division_tests.c.o:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/division_tests.dir/build.make tests/CMakeFiles/division_tests.dir/division_tests.c.o
+.PHONY : division_tests.c.o
+
+division_tests.i: division_tests.c.i
+.PHONY : division_tests.i
+
+# target to preprocess a source file
+division_tests.c.i:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/division_tests.dir/build.make tests/CMakeFiles/division_tests.dir/division_tests.c.i
+.PHONY : division_tests.c.i
+
+division_tests.s: division_tests.c.s
+.PHONY : division_tests.s
+
+# target to generate assembly for a file
+division_tests.c.s:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/division_tests.dir/build.make tests/CMakeFiles/division_tests.dir/division_tests.c.s
+.PHONY : division_tests.c.s
 
 # Help Target
 help:
@@ -194,7 +229,11 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... find_magic_number"
+	@echo "... test"
+	@echo "... division_tests"
+	@echo "... division_tests.o"
+	@echo "... division_tests.i"
+	@echo "... division_tests.s"
 .PHONY : help
 
 
@@ -206,6 +245,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ssakata/programming/division_by_multiplication && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

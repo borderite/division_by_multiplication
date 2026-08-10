@@ -132,21 +132,21 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles /home/ssakata/programming/division_by_multiplication//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/ssakata/programming/division_by_multiplication && $(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles /home/ssakata/programming/division_by_multiplication/find_magic_number//CMakeFiles/progress.marks
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 find_magic_number/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles /home/ssakata/programming/division_by_multiplication//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
+	cd /home/ssakata/programming/division_by_multiplication && $(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles /home/ssakata/programming/division_by_multiplication/find_magic_number//CMakeFiles/progress.marks
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 find_magic_number/codegen
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ssakata/programming/division_by_multiplication/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 find_magic_number/clean
 .PHONY : clean
 
 # The main clean target
@@ -155,31 +155,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 find_magic_number/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 find_magic_number/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ssakata/programming/division_by_multiplication && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named find_magic_number
+# Convenience name for target.
+find_magic_number/CMakeFiles/find_magic_number.dir/rule:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 find_magic_number/CMakeFiles/find_magic_number.dir/rule
+.PHONY : find_magic_number/CMakeFiles/find_magic_number.dir/rule
 
-# Build rule for target.
-find_magic_number: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 find_magic_number
+# Convenience name for target.
+find_magic_number: find_magic_number/CMakeFiles/find_magic_number.dir/rule
 .PHONY : find_magic_number
 
 # fast build rule for target.
 find_magic_number/fast:
-	$(MAKE) $(MAKESILENT) -f find_magic_number/CMakeFiles/find_magic_number.dir/build.make find_magic_number/CMakeFiles/find_magic_number.dir/build
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f find_magic_number/CMakeFiles/find_magic_number.dir/build.make find_magic_number/CMakeFiles/find_magic_number.dir/build
 .PHONY : find_magic_number/fast
+
+find_magic_number.o: find_magic_number.c.o
+.PHONY : find_magic_number.o
+
+# target to build an object file
+find_magic_number.c.o:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f find_magic_number/CMakeFiles/find_magic_number.dir/build.make find_magic_number/CMakeFiles/find_magic_number.dir/find_magic_number.c.o
+.PHONY : find_magic_number.c.o
+
+find_magic_number.i: find_magic_number.c.i
+.PHONY : find_magic_number.i
+
+# target to preprocess a source file
+find_magic_number.c.i:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f find_magic_number/CMakeFiles/find_magic_number.dir/build.make find_magic_number/CMakeFiles/find_magic_number.dir/find_magic_number.c.i
+.PHONY : find_magic_number.c.i
+
+find_magic_number.s: find_magic_number.c.s
+.PHONY : find_magic_number.s
+
+# target to generate assembly for a file
+find_magic_number.c.s:
+	cd /home/ssakata/programming/division_by_multiplication && $(MAKE) $(MAKESILENT) -f find_magic_number/CMakeFiles/find_magic_number.dir/build.make find_magic_number/CMakeFiles/find_magic_number.dir/find_magic_number.c.s
+.PHONY : find_magic_number.c.s
 
 # Help Target
 help:
@@ -195,6 +220,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... find_magic_number"
+	@echo "... find_magic_number.o"
+	@echo "... find_magic_number.i"
+	@echo "... find_magic_number.s"
 .PHONY : help
 
 
@@ -206,6 +234,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ssakata/programming/division_by_multiplication && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
