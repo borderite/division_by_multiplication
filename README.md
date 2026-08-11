@@ -10,13 +10,15 @@ The following three directories contain source files.
 
 To build the `find_margic_number` program, run the following commands in the project root directory.
 ```
+mkdir build
 cmake -S . -B build 
 cmake --build build
 cmake --install 
 ```
 
-If you also want to build the nasm example library and unit tests, please run the following commands intead:
+If you also want to build the nasm example library and unit tests, run the following commands intead:
 ```
+mkdir build
 cmake -Dtest_nasm_examples=True -S . -B build 
 cmake --build build
 cmake --install 
