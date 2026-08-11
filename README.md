@@ -8,7 +8,7 @@ The following three directories contain source files.
 
 - `tests`: The unit test files for the codes in `nasm_examples`. If you build them, the test executable is tests/division_tests in the build directory. You can also run the test by the `ctest` command. The build of the tests requires the [Unity unit testing framework](https://www.throwtheswitch.org/unity). If it is not installed on your computer, the build process automatically downloads it and builds the required library.
 
-To build the `find_margic_number` program, run the following commands in the project root directory.
+To build the `find_margic_number` program and install it to the standard binary directory, run the following commands in the project root directory.
 ```
 mkdir build
 cmake -S . -B build 
@@ -23,6 +23,6 @@ cmake -Dtest_nasm_examples=True -S . -B build
 cmake --build build
 cmake --install 
 ```
-
+The test executable is `build/tests/division_tests`.
 
 
