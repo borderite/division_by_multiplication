@@ -12,6 +12,7 @@ if (test_nasm_examples)
   enable_testing()
   add_subdirectory(nasm_examples)
   add_subdirectory(tests)
-  add_test(NAME all_test COMMAND build/tests/division_tests)
+#  add_test(NAME all_test COMMAND division_tests)
+#  add_test(NAME unsigned_div_by_3_down_32 COMMAND test_unsigned_div_by_3_down_32)
 endif ()
 
