@@ -1,10 +1,4 @@
-#include "unity.h"
-#include <stdint.h>
-
-typedef uint64_t int_type_t;
-const int_type_t divisor = 21;
-#define FUNCTION_TO_TEST unsigned_div_by_21_down_64
-int_type_t INT_TYPE_MAX = UINT64_MAX;
-#define TEST_EQUAL TEST_ASSERT_EQUAL_UINT64
+#define DIVISOR 21
+#define BITWIDTH 64
 
 #include "test_unsigned_div_down.inc"
