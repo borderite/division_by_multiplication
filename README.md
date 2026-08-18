@@ -1,4 +1,4 @@
-This repository provides a few examples of the division by multiplication method using NASM. It also includes a program to calculate the parameters required by the division by multiplication method. 
+This repository provides a few examples of the division by multiplication method using NASM. It also includes a program to calculate the parameters required by the division by multiplication method. You can find a note on the division by multiplication method on [this page](https://functor.network/user/3329/entry/1938).
 
 The following three directories contain source files.
 
