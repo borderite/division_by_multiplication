@@ -5,7 +5,7 @@
 void setUp(void) {}
 void tearDown(void) {}
 
-TYPE dividend;
+static TYPE dividend;
 
 void test(void) {
   TYPE expected = get_expected_value(dividend);
