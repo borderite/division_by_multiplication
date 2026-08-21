@@ -11,9 +11,9 @@ set(TEST_UNSIGNED_COMMON_SOURCES test_unsigned_div_common.inc ${TEST_COMMON_SOUR
 set(TEST_SIGNED_COMMON_SOURCES test_signed_div_common.inc ${TEST_COMMON_SOURCES})
 set(TEST_UNSIGNED_DOWN_SOURCES test_unsigned_div_down.inc ${TEST_UNSIGNED_COMMON_SOURCES})
 set(TEST_UNSIGNED_UP_SOURCES test_unsigned_div_up.inc ${TEST_UNSIGNED_COMMON_SOURCES})
-set(TEST_SIGNED_DOWN_SOURCES test_signed_div_down.inc ${TEST_UNSIGNED_COMMON_SOURCES})
-set(TEST_SIGNED_ZERO_SOURCES test_signed_div_zero.inc ${TEST_UNSIGNED_COMMON_SOURCES})
-set(TEST_SIGNED_UP_SOURCES test_signed_div_up.inc ${TEST_UNSIGNED_COMMON_SOURCES})
+set(TEST_SIGNED_DOWN_SOURCES test_signed_div_down.inc ${TEST_SIGNED_COMMON_SOURCES})
+set(TEST_SIGNED_ZERO_SOURCES test_signed_div_zero.inc ${TEST_SIGNED_COMMON_SOURCES})
+set(TEST_SIGNED_UP_SOURCES test_signed_div_up.inc ${TEST_SIGNED_COMMON_SOURCES})
 set_source_files_properties(
   test_unsigned_div_down.inc
   test_unsigned_div_up.inc
@@ -42,6 +42,7 @@ set(unsigned_up_tests
 set(signed_zero_tests
   test_signed_div_by_3_zero_32
   test_signed_div_by_7_zero_32
+  test_signed_div_by_neg_5_zero_32
   test_signed_div_by_3_zero_64
   test_signed_div_by_21_zero_64
 )
