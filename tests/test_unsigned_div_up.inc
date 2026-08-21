@@ -1,3 +1,4 @@
+/* -*- mode: c -*- */
 #include "test_common.h"
 #include "macro_tools.h"
 #include <stdbool.h>
@@ -11,4 +12,4 @@ static TYPE get_expected_value(TYPE n) {
   return (n - pos_flag) / divisor + pos_flag;
 }
 
-#include "test_signed_div_common.inc"
+#include "test_unsigned_div_common.inc"
