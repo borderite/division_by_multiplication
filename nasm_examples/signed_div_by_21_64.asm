@@ -30,7 +30,7 @@ signed_div_by_21_zero_64:
 ;;
 ;;   rax: int64_t, quotient
 ;;
-;; This function calculates sgn(rdi) * ceil(|rdi| / 21) using the
+;; This function calculates sgn(rdi) * floor(|rdi| / 21) using the
 ;; division by multiplication method.
 ;;
 ;; Let n denote the dividend in comments below.

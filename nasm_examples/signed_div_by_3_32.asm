@@ -30,8 +30,8 @@ signed_div_by_3_zero_32:
 ;;
 ;;   eax: int32_t, quotient
 ;;
-;; This function calculates sgn(edi) * ceil(|edi| / 3) using
-;; the division by multiplication method.
+;; This function calculates sgn(edi) * floor(|edi| / 3) using the
+;; division by multiplication method.
 ;;
 ;; Let n denote the dividend in comments below.
 ;;

@@ -62,11 +62,11 @@ unsigned_div_by_21_up_64:
 ;; Let n denote the dividend in comments below.
 ;;
     mov rax, MAGIC              ; rax = M
-    xor ecx, ecx
+    xor ecx, ecx                ; Clear rcx
     test edi, edi
     setnz cl                    ; rcx = (n > 0)
     sub rdi, rcx                ; rdi = nu = n - (n > 0)
-    mul rdi                     ; [rdx:rax] = n * M
+    mul rdi                     ; rdx = (n * M) >> 32
     add rdx, rdi                ; [cf:rdx] = ((n * M) >> 32) + n
     rcr rdx, 1                  ; rdx = (((n * M) >> 32) + n) >> 1
     shr rdx, SHIFT - 1          ; rdx = (((n * M) >> 32) + n) >> SHIFT
