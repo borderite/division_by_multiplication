@@ -1,4 +1,5 @@
 #include "test_signed_div_64.h"
-#define ABS_DIVISOR 3
+#define NEGATIVE_DIVISOR
+#define ABS_DIVISOR 5
 
 #include "test_signed_div_down.inc"

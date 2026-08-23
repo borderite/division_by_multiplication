@@ -9,9 +9,9 @@ void tearDown(void) {}
 static TYPE dividend;
 
 void test(void) {
+  PRINT_DIVIDEND;
   TYPE expected = get_expected_value(dividend);
   TYPE actual = FUNCTION_TO_TEST(dividend);
-  printf("dividend = %d\n", dividend);
   TEST_EQUAL(expected, actual);
 }
 
@@ -30,8 +30,8 @@ int main(void) {
   dividend = -nbar;
   RUN_TEST(test);
   
-  TYPE lb = -99 * abs_divisor + 1;
-  TYPE ub = -101 * abs_divisor - 1;
+  TYPE lb = -101 * abs_divisor + 1;
+  TYPE ub = -99 * abs_divisor - 1;
   for (dividend = lb; dividend <= ub; ++dividend)
     RUN_TEST(test);
 

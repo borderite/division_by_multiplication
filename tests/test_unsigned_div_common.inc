@@ -8,9 +8,9 @@ void tearDown(void) {}
 static TYPE dividend;
 
 void test(void) {
+  PRINT_DIVIDEND;
   TYPE expected = get_expected_value(dividend);
   TYPE actual = FUNCTION_TO_TEST(dividend);
-  printf("dividend = %u\n", dividend);
   TEST_EQUAL(expected, actual);
 }
 
