@@ -129,7 +129,7 @@ int main(int argc, char* argv[]) {
   }    
   uint32_t p;
   uint32_t s = 0;
-  bool shift = false;
+  bool is_m_large = false;
   mpz_t m;
   mpz_t M;
   mpz_t N;
@@ -150,7 +150,7 @@ int main(int argc, char* argv[]) {
       mpz_mul_2exp(N, one, W - 1); // N = 2 **（W - 1)
       find_row_params(N, d, &p, m);
       if (mpz_cmp(m, N) >= 0) {
-        shift = true;
+        is_m_large = true;
         s = p - W;
         mpz_mul_2exp(N, N, 1); // N = 2 ** W
         mpz_sub(M, m, N);      // M = m - 2 ** W
@@ -163,7 +163,7 @@ int main(int argc, char* argv[]) {
       mpz_neg(d, d);               // d = -d
       find_row_params(N, d, &p, m);
       if (mpz_cmp(m, N) >= 0) {
-        shift = true;
+        is_m_large = true;
         s = p - W;
         mpz_mul_2exp(N, one, W); // N = 2 ** W
         mpz_sub(M, m, N);        // M = m - 2 ** W
@@ -175,7 +175,7 @@ int main(int argc, char* argv[]) {
     mpz_mul_2exp(N, one, W);
     find_row_params(N, d, &p, m);
     if (mpz_cmp(m, N) >= 0) {
-      shift = true;
+      is_m_large = true;
       s = p - W;
       mpz_sub(M, m, N); // M = m - 2 ** W
     } else {
@@ -189,12 +189,15 @@ int main(int argc, char* argv[]) {
   printf("m = ");
   mpz_out_str(stdout, 10, m);
   printf(" (%lu bits)\n", bitlen);
-  printf("shift = %s\n", shift ? "true" : "false");
-  bitlen = mpz_sizeinbase(M, 2);
-  printf("M = ");
-  mpz_out_str(stdout, 10, M);
-  printf(" (%lu bits)\n", bitlen);
-  printf("s = %u\n", s);
-  mpz_clears(d, m, M, N, one, NULL);
+  if (is_m_large) {
+    printf("The magic number m does not fit in %u bits. ", W);
+    printf("You need to use the modified formula with the following numbers.\n");
+    bitlen = mpz_sizeinbase(M, 2);
+    printf("M = m - 2 ** %u = ", W);
+    mpz_out_str(stdout, 10, M);
+    printf(" (%lu bits)\n", bitlen);
+    printf("s = p - %u = %u\n", W, s);
+    mpz_clears(d, m, M, N, one, NULL);
+  }    
   return 0;
 }

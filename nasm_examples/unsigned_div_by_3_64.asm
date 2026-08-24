@@ -7,9 +7,8 @@
 ;;
 default rel
     
-%define MAGIC 12297829382473034411 ; 64 bits
-%define P 65
-%define P_U_3_64_MINUS_64 1
+MAGIC equ 12297829382473034411  ; 64 bits
+P equ 65
 
 section .text
 

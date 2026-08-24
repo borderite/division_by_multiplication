@@ -7,8 +7,8 @@
 ;;
 default rel
     
-%define MAGIC 613566757     ; 30 bits
-%define SHIFT 3
+MAGIC equ 613566757             ; 30 bits
+SHIFT equ 3
 
 section .text
 
