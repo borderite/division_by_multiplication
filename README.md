@@ -6,7 +6,7 @@ The following three directories contain source files.
 
 - `nasm_examples`: Examples of the division by multiplication method implemented in NASM. You can build a library including the example functions. But it is not built by default, because the library is only used for the unit tests of the example codes.
 
-- `tests`: The unit test files for the codes in `nasm_examples`. If you build them, the test executable is tests/division_tests in the build directory. You can also run the test by the `ctest` command. The build of the tests requires the [Unity unit testing framework](https://www.throwtheswitch.org/unity). If it is not installed on your computer, the build process automatically downloads it and builds the required library.
+- `tests`: The unit test files for the codes in `nasm_examples`. If you build them, the test executables are `tests/test_{signed,unsigned}_div_by_[neg_]<divisor>_{zero,up,down}_{32,64}`. You can run all of the tests at once by the `ctest` command. The build of the tests requires the [Unity unit testing framework](https://www.throwtheswitch.org/unity). If it is not installed on your computer, the build process automatically downloads it and builds the required library.
 
 To build the `find_margic_number` program and install it to the standard binary directory, run the following commands in the project root directory.
 ```
